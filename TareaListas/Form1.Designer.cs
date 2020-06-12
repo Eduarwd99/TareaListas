@@ -28,6 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "MATRICULA"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "APELLIDOS"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            "NOMBRES"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            "EDAD"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            "SEXO"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             this.btnAgregar = new System.Windows.Forms.Button();
             this.gridEstudiante = new System.Windows.Forms.DataGridView();
             this.txtMatricula = new System.Windows.Forms.TextBox();
@@ -48,6 +58,11 @@
             this.txtMayor = new System.Windows.Forms.TextBox();
             this.txtMenor = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
+            this.MATRICULA = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.APELLIDOS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NOMBRES = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EDAD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SEXO = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.gridEstudiante)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +103,20 @@
             // 
             // lstEstudiante
             // 
+            this.lstEstudiante.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.MATRICULA,
+            this.APELLIDOS,
+            this.NOMBRES,
+            this.EDAD,
+            this.SEXO});
             this.lstEstudiante.HideSelection = false;
+            listViewItem1.StateImageIndex = 0;
+            this.lstEstudiante.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.lstEstudiante.Location = new System.Drawing.Point(207, 173);
             this.lstEstudiante.Name = "lstEstudiante";
             this.lstEstudiante.Size = new System.Drawing.Size(549, 158);
@@ -230,6 +258,10 @@
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.button2_Click);
             // 
+            // MATRICULA
+            // 
+            this.MATRICULA.Tag = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,6 +318,11 @@
         private System.Windows.Forms.TextBox txtMayor;
         private System.Windows.Forms.TextBox txtMenor;
         private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.ColumnHeader MATRICULA;
+        private System.Windows.Forms.ColumnHeader APELLIDOS;
+        private System.Windows.Forms.ColumnHeader NOMBRES;
+        private System.Windows.Forms.ColumnHeader EDAD;
+        private System.Windows.Forms.ColumnHeader SEXO;
     }
 }
 

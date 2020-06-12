@@ -23,19 +23,20 @@ namespace TareaListas
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //Numero de matricula ingresada no valida...
-            if (this.txtMatricula.Text.Length == 0)
+            
+            if (!(int.TryParse(this.txtMatricula.Text, out int matricula)))
             {
-                MessageBox.Show("Debe ingresar el numero de matricula del estudiante");
+                MessageBox.Show("Numero de matricula ingresada no valida...");
                 this.txtMatricula.Focus();
             }
             else if (this.txtApellidos.Text.Length == 0)
             {
-                MessageBox.Show("Debe ingresar los apellidos del estudiante");
+                MessageBox.Show("Debe ingresar los apellidos del estudiante...");
                 this.txtApellidos.Focus();
             }
             else if (this.txtNombres.Text.Length == 0)
             {
-                MessageBox.Show("Debe ingresar los nombres del estudiante");
+                MessageBox.Show("Debe ingresar los nombres del estudiante...");
                 this.txtNombres.Focus();
             }
             else if (!(int.TryParse(this.txtEdad.Text, out int edad)))
@@ -45,13 +46,13 @@ namespace TareaListas
             }
             else if (this.cmbSexo.Text == "")
             {
-                MessageBox.Show("Debe seleccionar el sexo del estudiante");
+                MessageBox.Show("Debe seleccionar el sexo del estudiante...");
                 this.cmbSexo.Focus();
             }
             else
             {
                 Estudiantes alumno = new Estudiantes();
-                alumno.matricula = this.txtMatricula.Text;
+                alumno.matricula = matricula;
                 alumno.apellidos = this.txtApellidos.Text;
                 alumno.nombres = this.txtNombres.Text;
                 alumno.edad = edad;
@@ -73,7 +74,7 @@ namespace TareaListas
         private void button2_Click(object sender, EventArgs e)
         {
             this.gridEstudiante.DataSource = null;
-            this.gridEstudiante.DataSource = lista.Where(data => data.matricula == this.txtMatricula.Text).ToList();
+            this.gridEstudiante.DataSource = lista.Where(data => data.matricula.ToString() == this.txtFiltrar.Text).ToList();
 
             this.txtMayor.Text = lista.Max(data => data.edad).ToString();
             this.txtMenor.Text = lista.Min(data => data.edad).ToString();

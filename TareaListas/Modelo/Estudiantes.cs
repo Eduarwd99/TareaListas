@@ -8,7 +8,7 @@ namespace TareaListas.Modelo
 {
     class Estudiantes
     {
-        public string matricula { get; set; }
+        public int matricula { get; set; }
         public string apellidos { get; set; }
         public string nombres { get; set; }
         public int edad { get; set; }
