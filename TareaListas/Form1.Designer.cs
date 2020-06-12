@@ -47,7 +47,7 @@
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.txtMayor = new System.Windows.Forms.TextBox();
             this.txtMenor = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +59,7 @@
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dataGridView1
             // 
@@ -207,21 +208,22 @@
             this.txtMenor.Size = new System.Drawing.Size(122, 20);
             this.txtMenor.TabIndex = 18;
             // 
-            // button2
+            // btnFiltrar
             // 
-            this.button2.Location = new System.Drawing.Point(16, 308);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(186, 23);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Filtrar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Location = new System.Drawing.Point(16, 308);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(186, 23);
+            this.btnFiltrar.TabIndex = 19;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 338);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtMenor);
             this.Controls.Add(this.txtMayor);
             this.Controls.Add(this.txtFiltrar);
@@ -271,7 +273,7 @@
         private System.Windows.Forms.TextBox txtFiltrar;
         private System.Windows.Forms.TextBox txtMayor;
         private System.Windows.Forms.TextBox txtMenor;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFiltrar;
     }
 }
 
