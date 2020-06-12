@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridEstudiante = new System.Windows.Forms.DataGridView();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstEstudiante = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,12 +48,12 @@
             this.txtMayor = new System.Windows.Forms.TextBox();
             this.txtMenor = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEstudiante)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(16, 173);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 173);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(186, 23);
             this.btnAgregar.TabIndex = 0;
@@ -61,17 +61,18 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // dataGridView1
+            // gridEstudiante
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(217, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(323, 159);
-            this.dataGridView1.TabIndex = 1;
+            this.gridEstudiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEstudiante.Location = new System.Drawing.Point(216, 6);
+            this.gridEstudiante.Name = "gridEstudiante";
+            this.gridEstudiante.Size = new System.Drawing.Size(540, 159);
+            this.gridEstudiante.TabIndex = 1;
             // 
             // txtMatricula
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(68, 6);
+            this.txtMatricula.Location = new System.Drawing.Point(67, 6);
+            this.txtMatricula.MaxLength = 5;
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(143, 20);
             this.txtMatricula.TabIndex = 2;
@@ -79,25 +80,25 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 9);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Matricula";
             // 
-            // listView1
+            // lstEstudiante
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(208, 173);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(332, 158);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lstEstudiante.HideSelection = false;
+            this.lstEstudiante.Location = new System.Drawing.Point(207, 173);
+            this.lstEstudiante.Name = "lstEstudiante";
+            this.lstEstudiante.Size = new System.Drawing.Size(549, 158);
+            this.lstEstudiante.TabIndex = 4;
+            this.lstEstudiante.UseCompatibleStateImageBehavior = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 44);
+            this.label2.Location = new System.Drawing.Point(12, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 5;
@@ -106,7 +107,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 79);
+            this.label3.Location = new System.Drawing.Point(12, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 6;
@@ -115,7 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 114);
+            this.label4.Location = new System.Drawing.Point(12, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 7;
@@ -124,7 +125,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 147);
+            this.label5.Location = new System.Drawing.Point(13, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 8;
@@ -133,7 +134,10 @@
             // cmbSexo
             // 
             this.cmbSexo.FormattingEnabled = true;
-            this.cmbSexo.Location = new System.Drawing.Point(51, 144);
+            this.cmbSexo.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
+            this.cmbSexo.Location = new System.Drawing.Point(50, 144);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(160, 21);
             this.cmbSexo.TabIndex = 9;
@@ -141,7 +145,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 208);
+            this.label6.Location = new System.Drawing.Point(11, 208);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(190, 13);
             this.label6.TabIndex = 10;
@@ -151,7 +155,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 259);
+            this.label7.Location = new System.Drawing.Point(8, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 11;
@@ -160,7 +164,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 285);
+            this.label8.Location = new System.Drawing.Point(8, 285);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 12;
@@ -168,49 +172,57 @@
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(68, 41);
+            this.txtApellidos.Location = new System.Drawing.Point(67, 41);
+            this.txtApellidos.MaxLength = 50;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(143, 20);
             this.txtApellidos.TabIndex = 13;
             // 
             // txtNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(68, 76);
+            this.txtNombres.Location = new System.Drawing.Point(67, 76);
+            this.txtNombres.MaxLength = 50;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(143, 20);
             this.txtNombres.TabIndex = 14;
             // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(51, 111);
+            this.txtEdad.Location = new System.Drawing.Point(50, 111);
+            this.txtEdad.MaxLength = 3;
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(160, 20);
             this.txtEdad.TabIndex = 15;
             // 
             // txtFiltrar
             // 
-            this.txtFiltrar.Location = new System.Drawing.Point(12, 224);
+            this.txtFiltrar.Location = new System.Drawing.Point(11, 224);
+            this.txtFiltrar.MaxLength = 5;
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.Size = new System.Drawing.Size(190, 20);
             this.txtFiltrar.TabIndex = 16;
             // 
             // txtMayor
             // 
-            this.txtMayor.Location = new System.Drawing.Point(80, 256);
+            this.txtMayor.Location = new System.Drawing.Point(79, 256);
+            this.txtMayor.MaxLength = 3;
             this.txtMayor.Name = "txtMayor";
+            this.txtMayor.ReadOnly = true;
             this.txtMayor.Size = new System.Drawing.Size(122, 20);
             this.txtMayor.TabIndex = 17;
             // 
             // txtMenor
             // 
-            this.txtMenor.Location = new System.Drawing.Point(80, 282);
+            this.txtMenor.Location = new System.Drawing.Point(79, 282);
+            this.txtMenor.MaxLength = 3;
             this.txtMenor.Name = "txtMenor";
+            this.txtMenor.ReadOnly = true;
             this.txtMenor.Size = new System.Drawing.Size(122, 20);
             this.txtMenor.TabIndex = 18;
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(16, 308);
+            this.btnFiltrar.Location = new System.Drawing.Point(15, 308);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(186, 23);
             this.btnFiltrar.TabIndex = 19;
@@ -222,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 338);
+            this.ClientSize = new System.Drawing.Size(761, 336);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtMenor);
             this.Controls.Add(this.txtMayor);
@@ -238,15 +250,15 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lstEstudiante);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMatricula);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridEstudiante);
             this.Controls.Add(this.btnAgregar);
             this.Name = "Form1";
             this.Text = "Listas";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEstudiante)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,10 +267,10 @@
         #endregion
 
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridEstudiante;
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstEstudiante;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
